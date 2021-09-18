@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zaton/main.dart';
+import 'package:zaton/pages/RegisterPage.dart';
 import 'package:zaton/widgets/list_cart_portaint.dart';
 
 import 'LoginPage.dart';
@@ -114,8 +115,12 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 Padding(padding: EdgeInsets.symmetric(horizontal: 30),
                   child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterPage()),
+                      );
+                    },                    style: ElevatedButton.styleFrom(
                       primary: Color(0xffE5FFE8),
                       onPrimary: Colors.white,
                       shadowColor: Color(0xff24C273),

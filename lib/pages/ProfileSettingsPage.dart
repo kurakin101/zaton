@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zaton/pages/LoginPage.dart';
+import 'package:zaton/pages/NotificationPage.dart';
 import 'package:zaton/pages/RegisterPage.dart';
 
 import '../utils/Manager.dart';
@@ -116,19 +117,25 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                     SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.notifications_none_outlined,
-                          color: Color(0xff24C273),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text("Уведомления", style: GoogleFonts.montserrat(
-                            fontSize: 18,
-                            color: Colors.black))
-                      ],
+                    InkWell(
+                      onTap: () =>  Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NotificationPage()),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.notifications_none_outlined,
+                            color: Color(0xff24C273),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text("Уведомления", style: GoogleFonts.montserrat(
+                              fontSize: 18,
+                              color: Colors.black))
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 20,
