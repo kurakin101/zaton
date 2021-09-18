@@ -23,14 +23,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^0.22.0
+  google_fonts: ^2.1.0
+  hexcolor:
+
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  google_fonts:
-  flutter_svg:
-  hexcolor:
 
 dev_dependencies:
   flutter_test:
@@ -49,8 +50,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/images/
-  #   - images/a_dot_ham.jpeg
+    - lib/assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -63,6 +63,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+
+#  fonts:
+#    - family: zaton # the name of your font family
+#      fonts:
+#        - asset: lib/assets/ # your font file name and the directory
+
   # fonts:
   #   - family: Schyler
   #     fonts:
