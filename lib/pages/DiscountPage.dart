@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:zaton/widgets/bodyWidget.dart';
+import 'package:zaton/widgets/card_with_icon.dart';
+import 'package:zaton/widgets/discount_button.dart';
+import 'package:zaton/widgets/list_card_landscape.dart';
+import 'package:zaton/widgets/list_card_portrait.dart';
+import 'package:zaton/widgets/section_title.dart';
 
 class DiscountPage extends StatefulWidget {
 
@@ -10,91 +18,106 @@ class DiscountPage extends StatefulWidget {
 }
 
 class _DiscountPageState extends State<DiscountPage> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text("DiscountPage"),
-      ),
-    );
-  }
-
-  Widget cardUi(String id, String ownerId, String image, String description, String date,
-      String price, String name, String category) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-      // padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-
-      child: InkWell(
-        // onTap: () => Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //       builder: (context) => detailsPage(
-        //           id, image, description, date, name, price, category, ownerId, context)),
-        // ),
-        child: Container(
-          padding: EdgeInsets.all(8),
-          child: Stack(
-            children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Container(
-                  padding: EdgeInsets.only(
-                    bottom: 32,
-                  ),
-                  // child: Neumorphic(
-                  //   style: NeumorphicStyle(
-                  //     intensity: 0,
-                  //     boxShape: NeumorphicBoxShape.roundRect(
-                  //         BorderRadius.circular(12)),
-                  //   ),
-                  //   child: Container(
-                  //     height: double.infinity,
-                  //     width: double.infinity,
-                  //     child: Image.network(image, fit: BoxFit.fill),
-                  //   ),
-                  // ),
-                ),
-              ),
-              Container(
-                // padding: EdgeInsets.symmetric(
-                //   horizontal: 16,
-                // ),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: Text(
-                          name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          r"$" '$price',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+      backgroundColor: HexColor("#e5ffe8"),
+      //top bar with Instagram information and some buttons
+      //this is the website body
+      appBar: AppBar(
+        title: Text(
+          'Акции',
+          style: GoogleFonts.montserrat(
+              color: HexColor('#24C273'),
+            fontSize: 28,
+            fontWeight: FontWeight.bold
           ),
         ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
+      body: bodyWidget(<Widget>[
+        //card with big icon without image
+        discountButton(
+          'Доставим\nпродукты\nза 1 рубль',
+          'assets/images/bannana.png',
+          'assets/images/bannana.png',
+          'assets/images/bannana.png',
+          (){
+            //on tap action
+          },
+        ),
+        //title of lower section
+        sectionTitle('Скидки', '5'),
+        //list of portrait cards
+        listCardPortrait([
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+        ]),
+        sectionTitle('Еда за баллы', '43'),
+        //list of portrait cards
+        listCardPortrait([
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+          //portrait card from list
+          {
+            'imageURL':'assets/images/rectangle.png',
+            'title':'Скидка 20% при\n заказе от 2000 р',
+          },
+        ]),
+      ],),
+      //floating action button with business information
     );
   }
 }

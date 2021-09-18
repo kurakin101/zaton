@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:zaton/utils/Manager.dart';
 import 'package:zaton/screens/SplashScreen.dart';
 
@@ -19,7 +20,8 @@ class App extends StatelessWidget {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "App",
-      theme: new ThemeData(
+      theme: ThemeData(
+        backgroundColor: HexColor("#e5ffe8"),
       ),
       home: SplashScreen(),
       // передаём маршруты в приложение
