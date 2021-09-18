@@ -166,7 +166,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         width: 8,
                       ),
                       Text(
-                        "Служба подде",
+                        "Служба поддержки",
                         style: GoogleFonts.montserrat(
                             fontSize: 14,
                             color: Colors.black),

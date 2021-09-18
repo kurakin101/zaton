@@ -9,6 +9,10 @@ Widget cardPortrait(BuildContext context, String imageURL, String title, String 
       //js.context.callMethod('open', [link]);
     },
     child: Card(
+      shape: RoundedRectangleBorder(
+        //side: BorderSide(color: Colors.white70, width: 1),
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Stack(
         children: [
           Align(
@@ -19,7 +23,7 @@ Widget cardPortrait(BuildContext context, String imageURL, String title, String 
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             AspectRatio(
-              aspectRatio: 16.0 / 14.0,
+              aspectRatio: 15.5 / 14.0,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -35,7 +39,7 @@ Widget cardPortrait(BuildContext context, String imageURL, String title, String 
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+              padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
