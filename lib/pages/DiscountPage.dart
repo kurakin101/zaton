@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:zaton/widgets/bodyWidget.dart';
-import 'package:zaton/widgets/card_with_icon.dart';
 import 'package:zaton/widgets/discount_button.dart';
 import 'package:zaton/widgets/list_card_landscape.dart';
 import 'package:zaton/widgets/list_card_discount.dart';

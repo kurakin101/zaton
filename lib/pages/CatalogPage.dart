@@ -45,7 +45,7 @@ class _CatalogPageState extends State<CatalogPage> {
       body: GridView.count(
         crossAxisCount: 2,
         padding: EdgeInsets.all(12.0),
-        childAspectRatio: 6.8 / 9.0,
+        childAspectRatio: 6.8 / 8.9,
         children: <Widget>[
           cardPortrait(
             context,
