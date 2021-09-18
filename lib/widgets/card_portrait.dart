@@ -3,48 +3,65 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 //big portrait card with image
-Widget cardPortrait(BuildContext context, String imagePath, String title) {
+Widget cardPortrait(BuildContext context, String imageURL, String title, String subtitle, String description,) {
   return GestureDetector(
     onTap: () {
-      //on tap action
+      //js.context.callMethod('open', [link]);
     },
-    child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
-      child: Container(
-        height: 33,
-        child: Card(
-          color: HexColor('#8EDDB5'),
-          elevation: 4,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
+    child: Card(
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment(0.8, 0.9),
+            child: Icon(Icons.shopping_cart, color: HexColor('#24C273'),),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Text(
-                  title,
-                  style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 18,
+          Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            AspectRatio(
+              aspectRatio: 16.0 / 14.0,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Image.asset(
+                    imageURL,
+                    alignment: Alignment.center,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                ),
+                  Align(
+                    alignment: Alignment(-0.7, -0.6),
+                    child: Icon(Icons.favorite, color: Colors.red,),
+                  ),
+                ],
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(30.0),
-                child: Image.asset(
-                    imagePath,
-                    width: 243,
-                    height: 77,
-                    fit:BoxFit.cover
-                ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(title, style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),),
+                  SizedBox(height: 8.0),
+                  Text(
+                    subtitle,
+                    style: GoogleFonts.montserrat(
+                      fontSize: 12,
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  Text(
+                    description,
+                    style: GoogleFonts.montserrat(
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
+            ),
+          ],
+        ),],
       ),
     ),
   );

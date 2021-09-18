@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:zaton/widgets/card_portrait.dart';
 
 class CatalogPage extends StatefulWidget {
 
@@ -16,87 +19,77 @@ class _CatalogPageState extends State<CatalogPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.teal,
-        width: double.infinity,
-        height: double.infinity,
-        child: Text("CatalogPage"),
-      ),
-    );
-  }
-
-  Widget cardUi(String id, String ownerId, String image, String description, String date,
-      String price, String name, String category) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-      // padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-
-      child: InkWell(
-        // onTap: () => Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //       builder: (context) => detailsPage(
-        //           id, image, description, date, name, price, category, ownerId, context)),
-        // ),
-        child: Container(
-          padding: EdgeInsets.all(8),
-          child: Stack(
-            children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Container(
-                  padding: EdgeInsets.only(
-                    bottom: 32,
-                  ),
-                  // child: Neumorphic(
-                  //   style: NeumorphicStyle(
-                  //     intensity: 0,
-                  //     boxShape: NeumorphicBoxShape.roundRect(
-                  //         BorderRadius.circular(12)),
-                  //   ),
-                  //   child: Container(
-                  //     height: double.infinity,
-                  //     width: double.infinity,
-                  //     child: Image.network(image, fit: BoxFit.fill),
-                  //   ),
-                  // ),
-                ),
-              ),
-              Container(
-                // padding: EdgeInsets.symmetric(
-                //   horizontal: 16,
-                // ),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: Text(
-                          name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          r"$" '$price',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+      appBar: AppBar(
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: HexColor('#24C273'),),
+          onPressed: () {},
+        ),
+        title: Text(
+          'Фрукты',
+          style: GoogleFonts.montserrat(
+              color: HexColor('#24C273'),
+              fontSize: 28,
+              fontWeight: FontWeight.bold
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart, color: HexColor('#24C273'),),
+            onPressed: () {},
+          ),
+        ],
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body: GridView.count(
+        crossAxisCount: 2,
+        padding: EdgeInsets.all(12.0),
+        childAspectRatio: 6.8 / 9.0,
+        children: <Widget>[
+          cardPortrait(
+            context,
+            'assets/images/banana.png',
+            'Бананы',
+            '1 кг',
+            '100 руб.',
+          ),
+          cardPortrait(
+            context,
+            'assets/images/strauberry.png',
+            'Арбуз',
+            '1 кг',
+            '100 руб.',
+          ),
+          cardPortrait(
+            context,
+            'assets/images/mandarin.png',
+            'Мандарины',
+            '1 кг',
+            '100 руб.',
+          ),
+          cardPortrait(
+            context,
+            'assets/images/orange.png',
+            'Апельсины',
+            '1 кг',
+            '100 руб.',
+          ),
+          cardPortrait(
+            context,
+            'assets/images/lime.png',
+            'Лайм',
+            '1 кг',
+            '100 руб.',
+          ),
+          cardPortrait(
+            context,
+            'assets/images/ananas.png',
+            'Ананас',
+            '1 кг',
+            '100 руб.',
+          ),
+        ],
       ),
     );
   }

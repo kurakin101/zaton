@@ -5,7 +5,7 @@ import 'package:zaton/widgets/bodyWidget.dart';
 import 'package:zaton/widgets/card_with_icon.dart';
 import 'package:zaton/widgets/discount_button.dart';
 import 'package:zaton/widgets/list_card_landscape.dart';
-import 'package:zaton/widgets/list_card_portrait.dart';
+import 'package:zaton/widgets/list_card_discount.dart';
 import 'package:zaton/widgets/section_title.dart';
 
 class DiscountPage extends StatefulWidget {
@@ -50,7 +50,7 @@ class _DiscountPageState extends State<DiscountPage> {
         //title of lower section
         sectionTitle('Скидки', '5'),
         //list of portrait cards
-        listCardPortrait([
+        listCardDiscount([
           //portrait card from list
           {
             'imageURL':'assets/images/rectangle.png',
@@ -84,7 +84,7 @@ class _DiscountPageState extends State<DiscountPage> {
         ]),
         sectionTitle('Еда за баллы', '43'),
         //list of portrait cards
-        listCardPortrait([
+        listCardDiscount([
           //portrait card from list
           {
             'imageURL':'assets/images/rectangle.png',
