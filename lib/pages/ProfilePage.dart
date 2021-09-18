@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:zaton/main.dart';
 import 'package:zaton/widgets/list_cart_portaint.dart';
 
+import 'LoginPage.dart';
+
 class ProfilePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -76,7 +78,12 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 Padding(padding: EdgeInsets.symmetric(horizontal: 30),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       primary: Color(0xff24C273),
                       onPrimary: Colors.white,
