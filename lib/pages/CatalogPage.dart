@@ -17,6 +17,9 @@ class _CatalogPageState extends State<CatalogPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        color: Colors.teal,
+        width: double.infinity,
+        height: double.infinity,
         child: Text("CatalogPage"),
       ),
     );

@@ -1,6 +1,7 @@
 import 'dart:core';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:zaton/utils/Manager.dart';
 
 // Наследуемся от виджета с состоянием,
@@ -38,11 +39,35 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.blue,
+        color: Color(0xff24C273),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
+              Column(
+                children: [
+                  Text("ZATON", style: GoogleFonts.montserrat(fontSize: 36, fontWeight: FontWeight.w800),),
+                  Text("Курьер", style: GoogleFonts.montserrat(fontSize: 22),),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("Загрузка...", style: GoogleFonts.montserrat(fontSize: 14, color: Colors.white)),
+                  SizedBox(height: 4,),
+                  CircularProgressIndicator(
+                    strokeWidth: 1.5,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+
+              // Container(
+              //   width: 100,
+              //   height: 100,
+              //   color: Colors.white,
+              // ),
             ],
           ),
         ),
