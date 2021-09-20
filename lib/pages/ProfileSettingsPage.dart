@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:zaton/pages/LoginPage.dart';
+import 'package:zaton/pages/MyDataPage.dart';
 import 'package:zaton/pages/NotificationPage.dart';
-import 'package:zaton/pages/RegisterPage.dart';
+import 'package:zaton/pages/OrdersPage.dart';
 
 import '../utils/Manager.dart';
 import 'CatalogPage.dart';
@@ -66,24 +66,38 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                 padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.bookmark_border_sharp,
-                          color: Color(0xff24C273),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text("Мои заказы", style: GoogleFonts.montserrat(
-                            fontSize: 18,
-                            color: Colors.black))
-                      ],
+                    InkWell(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OrdersPage()),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.bookmark_border_sharp,
+                            color: Color(0xff24C273),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text("Мои заказы",
+                              style: GoogleFonts.montserrat(
+                                  fontSize: 18, color: Colors.black))
+                        ],
+                      ),
                     ),
-                    SizedBox(
-                      height: 20,
+
+                  SizedBox(
+                    height: 20,
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyDataPage()),
                     ),
-                    Row(
+                    child: Row(
                       children: [
                         Icon(
                           Icons.data_usage_outlined,
@@ -92,22 +106,23 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                         SizedBox(
                           width: 20,
                         ),
-                        Text("Мои данные", style: GoogleFonts.montserrat(
-                            fontSize: 18,
-                            color: Colors.black))
+                        Text("Мои данные",
+                            style: GoogleFonts.montserrat(
+                                fontSize: 18, color: Colors.black))
                       ],
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.star_border_outlined,
-                          color: Color(0xff24C273),
-                        ),
-                        SizedBox(
-                          width: 20,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star_border_outlined,
+                        color: Color(0xff24C273),
+                      ),
+                      SizedBox(
+                        width: 20,
                         ),
                         Text("Избранное", style: GoogleFonts.montserrat(
                             fontSize: 18,
@@ -195,7 +210,3 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
   }
 }
 
-void _navigateToRegisterScreen(BuildContext context) {
-  Navigator.of(context)
-      .push(MaterialPageRoute(builder: (context) => CatalogPage()));
-}
