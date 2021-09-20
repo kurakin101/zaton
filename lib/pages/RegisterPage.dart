@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zaton/main.dart';
 import 'package:zaton/pages/ProfileSettingsPage.dart';
+import 'package:zaton/pages/SupportPage.dart';
 import 'package:zaton/widgets/list_cart_portaint.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -177,7 +178,12 @@ class _RegisterPageState extends State<RegisterPage> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SupportPage()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     onPrimary: Colors.white,
