@@ -20,6 +20,9 @@ class _NotificationPageState extends State<NotificationPage> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
+        iconTheme: IconThemeData(
+          color: Color(0xff24C273),
+        ),
         backgroundColor: Colors.white,
         title: Text("Уведомления",
             style: GoogleFonts.montserrat(

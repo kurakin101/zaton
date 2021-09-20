@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zaton/pages/FavoritePage.dart';
 import 'package:zaton/pages/MyDataPage.dart';
 import 'package:zaton/pages/NotificationPage.dart';
 import 'package:zaton/pages/OrdersPage.dart';
+import 'package:zaton/pages/SupportPage.dart';
 
 import '../utils/Manager.dart';
 import 'CatalogPage.dart';
@@ -115,7 +117,12 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                   SizedBox(
                     height: 20,
                   ),
-                  Row(
+                  InkWell(
+                    onTap: () =>  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FavoritePage()),
+                    ),
+                    child: Row(
                     children: [
                       Icon(
                         Icons.star_border_outlined,
@@ -123,12 +130,14 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                       ),
                       SizedBox(
                         width: 20,
-                        ),
-                        Text("Избранное", style: GoogleFonts.montserrat(
-                            fontSize: 18,
-                            color: Colors.black))
-                      ],
-                    ),
+                      ),
+                      Text("Избранное", style: GoogleFonts.montserrat(
+                          fontSize: 18,
+                          color: Colors.black))
+                    ],
+                  ),
+                  ),
+
                     SizedBox(
                       height: 20,
                     ),
@@ -155,19 +164,25 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                     SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.info_outline_rounded,
-                          color: Color(0xff24C273),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text("Служба поддержки", style: GoogleFonts.montserrat(
-                            fontSize: 18,
-                            color: Colors.black))
-                      ],
+                    InkWell(
+                      onTap: () =>  Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SupportPage()),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.info_outline_rounded,
+                            color: Color(0xff24C273),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text("Служба поддержки", style: GoogleFonts.montserrat(
+                              fontSize: 18,
+                              color: Colors.black))
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 30,

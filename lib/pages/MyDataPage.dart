@@ -44,6 +44,9 @@ class _MyDataPageState extends State<MyDataPage>
         appBar: AppBar(
           centerTitle: true,
           elevation: 0,
+          iconTheme: IconThemeData(
+            color: Color(0xff24C273),
+          ),
           bottom: TabBar(
             onTap: (index) {
               // Should not used it as it only called when tab options are clicked,

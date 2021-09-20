@@ -22,6 +22,9 @@ class _RegisterPageState extends State<RegisterPage> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
+        iconTheme: IconThemeData(
+          color: Color(0xff24C273),
+        ),
         backgroundColor: Color(0xffE5FFE8),
         title: Text("Регистрация",
             style: GoogleFonts.montserrat(

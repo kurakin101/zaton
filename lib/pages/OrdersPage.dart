@@ -17,7 +17,9 @@ class _OrdersPageState extends State<OrdersPage> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Color(0xff24C273),
+        ),        backgroundColor: Colors.white,
         title: Text("Мои заказы",
             style: GoogleFonts.montserrat(
                 fontSize: 28,
